@@ -16,7 +16,7 @@ const (
 )
 
 type Config struct {
-	Features     []features.Feature `json:"features"`
+	Features     map[string]features.Feature `json:"features"`
 
 	path string //The path to the configuration file
 }
@@ -24,7 +24,7 @@ type Config struct {
 //NewConfig returns a new configuration struct
 func NewConfig() *Config {
 	return &Config{
-		Features: make([]features.Feature, 0),
+		Features: make(map[string]features.Feature),
 	}
 }
 
